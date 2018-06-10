@@ -1,0 +1,12 @@
+.row
+  h2
+    | ユーザー情報編集
+  = form_for @user, :html => { :class => 'col s12'} do |f|
+    .row
+      .input-field.col.s12
+        = f.text_field :name, class: 'materialize-textarea'
+        = f.label :name, '名前'
+      .input-field.col.s12
+        = f.text_area :calendar_iframe, class: 'materialize-textarea'
+        = f.label :calendar_iframe, 'カレンダーiframe'
+      = f.submit "更新" , class: 'waves-effect waves-light btn'
