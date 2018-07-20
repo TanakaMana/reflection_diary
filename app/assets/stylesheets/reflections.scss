@@ -6,5 +6,26 @@
   iframe {
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 50px;
   }
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  border-bottom: 1px solid #dcdcdc;
+}
+span.card-title {
+  background: linear-gradient(transparent 70%, #ffb6c1 60%);
+}
+
+[type="radio"]:not(:checked), [type="radio"]:checked {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.select-form {
+  margin-bottom: 30px;
+}
+#form-textarea {
+  display: none;
 }
