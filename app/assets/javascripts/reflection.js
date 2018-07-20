@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function() {
 
   // 入力フォーム表示切り替え
   $(function() {
-    $('input').change(function() {
+    $('input[name=form]').change(function() {
       var value = $(this).val();
       if (value == 'text_area') {
         $('#form-input').hide();
