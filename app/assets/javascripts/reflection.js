@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+  // input入力フォームの動的追加
   $(function() {
     var member_num = $('.js-team_member').length;
     $('#add_item_button').on('click', function() {
@@ -21,6 +22,20 @@ $(document).on('turbolinks:load', function() {
         $('#add_member_' + inputId).hide();
       }else{
         $('#add_member_' + inputId).remove();
+      }
+    });
+  });
+
+  // 入力フォーム表示切り替え
+  $(function() {
+    $('input').change(function() {
+      var value = $(this).val();
+      if (value == 'text_area') {
+        $('#form-input').hide();
+        $('#form-textarea').show();
+      } else {
+        $('#form-textarea').hide();
+        $('#form-input').show();
       }
     });
   });
