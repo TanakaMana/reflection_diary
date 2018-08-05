@@ -59,3 +59,8 @@ gem 'html2slim'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'acts-as-taggable-on'
+
+# Heroku settings
+group :production do
+  gem 'rails_12factor'
+end
