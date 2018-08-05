@@ -1,0 +1,13 @@
+.row
+  .col.s12.m12a
+    = form_for @diary do |f|
+      .input-field.col.s3
+        = f.date_field :date
+      .input-field.col.s12
+        = f.label :title, '記録タイトル'
+        = f.text_field :title
+        #form-textarea
+        = f.text_area :text, class: 'materialize-textarea'
+        br
+        = f.submit '作成', class: 'btn btn-primary'
+
