@@ -1,13 +1,20 @@
 header
   nav
     .nav-wrapper
-      = link_to '内省アプリ', root_path, class: 'brand-logo'
-  nav
-    - if user_signed_in?
-      .navbar-right
-        = link_to 'ユーザー情報編集', edit_user_path(current_user)
-        = link_to 'アカウント情報変更', edit_user_registration_path
-        = link_to 'ログアウト', destroy_user_session_path, method: :delete
-    - else
-      = link_to '新規登録', new_user_registration_path
-      = link_to 'ログイン', new_user_session_path
+      = link_to 'リフレクションDairy', root_path, class: 'brand-logo'
+      - if user_signed_in?
+        .navbar-right
+        ul.right.hide-on-med-and-down
+          li
+            = link_to 'メモ書き', new_reflection_path
+          li
+            = link_to '記録', new_diary_path
+          li
+            = link_to 'ユーザー情報編集', edit_user_path(current_user)
+          li
+            = link_to 'アカウント情報変更', edit_user_registration_path
+          li
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
+      - else
+        = link_to '新規登録', new_user_registration_path
+        = link_to 'ログイン', new_user_session_path

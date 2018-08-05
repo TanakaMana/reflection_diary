@@ -1,6 +1,5 @@
 .row
   .col.s12.m12a
-    = @user.calendar_iframe.html_safe
     .card
       .card-content
         h2.card-title
@@ -16,3 +15,25 @@
             |・最低でも1時間はやりたいことに時間を使い、最低でも1時間はやらなければならないことに時間を使う
           li
             |・好きな音楽・映像・野球観戦・デザインや技術系のイベントなど趣味に触れる
+
+    = @user.calendar_iframe.html_safe
+
+    - @diaries.each do |dia|
+      = dia.date
+      .card
+        .card-content
+          span.card-title
+            = dia.title
+            = link_to '編集', edit_diary_path(dia)
+          = safe_join(dia.text.split("\n"), tag(:br))
+
+    - @reflections.each do |ref|
+      = ref.date
+      .card
+        .card-content
+          span.card-title
+            = ref.title
+            = link_to '編集', edit_reflection_path(ref)
+          - ref.memos.each do |memo|
+            p
+              = safe_join(memo.memo.split("\n"), tag(:br))

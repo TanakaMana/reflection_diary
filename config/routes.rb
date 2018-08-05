@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'reflections#index'
   devise_for :users
   resources :reflections
+  resources :diaries
   resources :users
 end

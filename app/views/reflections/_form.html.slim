@@ -23,7 +23,7 @@
           #team_members_box
             = f.fields_for :memos do |m|
               .js-team_member[id="add_member_#{m.index}"]
-                = m.text_field :memo, placeholder: 'メモ', required: true
+                = m.text_field :memo, placeholder: 'メモ'
                 / = m.check_box :_destroy
                 / span.member_delete[data="{ id: m.index, default: 'default'}"]
                 /   | 削除
